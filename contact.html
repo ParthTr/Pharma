@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/all.min.css"
+    integrity="sha512-UJqci0ZyYcQ0AOJkcIkUCxLS2L6eNcOr7ZiypuInvEhO9uqIDi349MEFrqBzoy1QlfcjfURHl+WTMjEdWcv67A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="bootstrap.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <style>
+    .text2 {
+      margin-top: 10%;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: calibri;
+    }
+
+    .text3,
+    .text4 {
+      color: red;
+    }
+
+    .card1 {
+      background: url(background.webp);
+      padding: 10px;
+    }
+
+    .header {
+      font-size: 25px;
+      font-family: calibri;
+      font-weight: bold;
+    }
+
+    .contact {
+      text-decoration: none;
+      color: white;
+    }
+    .d1
+    {
+      background: rgb(131,58,180);
+      background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(177,47,85,1) 0%, rgba(253,29,29,1) 45%, rgba(252,176,69,1) 100%);
+      color: white;
+    }
+    .d2
+    {
+      background: rgb(131,58,180);
+      background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 100%, rgba(47,174,177,1) 100%, rgba(252,176,69,1) 100%);  
+      color: white;
+    }
+    .d3
+    {
+      background: rgb(47,174,177);
+      background: linear-gradient(90deg, rgba(47,174,177,1) 63%, rgba(69,252,207,1) 100%, rgba(131,58,180,1) 100%);
+      color:white;
+    }
+    .footer
+{
+    background-color: black;
+    width: 100%;
+    height:55%;
+}
+.social
+{
+    color: white;
+    margin:10px;
+}
+    .banner
+    {
+      position: relative;
+     
+    }
+    .p
+    {
+      position: absolute;
+      top:50%;
+      widows:100%;
+      text-align: center;
+      left:50%;
+      
+    }
+    .text
+    {
+      position: absolute;
+      top:40%;
+      widows:40%;
+      text-align: center;
+      left: 49%;
+      font-size: 30px;
+      color: white;
+      margin-bottom: 5%;
+    }
+    .content {
+  position: relative;
+}
+
+.content h2 {
+  color: #fff;
+  font-size: 8em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
+}
+
+.content h2:nth-child(2) {
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.body2 {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+ 
+
+}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script language="JavaScript">
+   
+    function function3() { 
+      swal("Success!", "Your response has been Submitted!", "success");
+    }
+    function sendEmail(){
+        Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "parthtrivedi690@gmail.com",
+        Password : "691F2E2B69730B18CD68B7082AC3A4BABF59",
+        To : "parth.lt@somaiya.edu",
+        From : "parth.lt@somaiya.edu",
+        Subject : "This is the subject",
+        Body : "And this is the body"
+    }).then(
+      message => alert(message)
+    );
+    }
+    
+    </script>
+</head>
+
+<body>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-notes-medical fa-beat"></i>Pharma</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mywork.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-primary position-relative" style="margin-right: 50px;">
+          <i class="fa-solid fa-cart-shopping"></i> <a href="cart.html" style="text-decoration: none;color:white">Cart</a>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            12
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid mb-5"  data-aos="fade-left" >
+    <div class="row" >
+      
+      <div class="col col-12" style="background: url(contact.png); height: 600px;" >
+       
+        <section>
+          <div class="content body2" style="position: relative;left:25%" >
+            <h2>Contact Us</h2>
+            <h2>Contact Us</h2>
+          </div>
+          
+        </section>
+      </button>
+      </div>
+    </div>
+  </div>
+  <button data-bs-toggle="modal"  class="btn btn-primary" data-bs-target="#staticBackdrop" style="position: relative;left:52%;top:51%;margin-bottom: 30px;">Contact</button>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Contact Form </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="needs-validation" novalidate  onsubmit="sendEmail()">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Recipient's username"
+                aria-label="Recipient's username" aria-describedby="basic-addon2" spellcheck="false"
+                data-ms-editor="true" fdprocessedid="098g19" name="email" id="email">
+              <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+            </div>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" placeholder="First Name" name="firstName">
+              <label for="floatingInput">First Name </label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="Text" class="form-control" id="floatingInput" placeholder="Last Name" name="lastName">
+              <label for="floatingInput">Last Name</label>
+            </div>
+            
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="msg"></textarea>
+              <label for="floatingTextarea">Comments</label>
+            </div>
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+              onclick="function3()">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid justify-content-evenly mb-5">
+    <div class="row">
+      <div class="col col-sm-12 col-lg-4" data-aos="fade-left">
+        <div class="card1 mb-2 d1">
+          <div class="header">Our Sales Teams</div>
+          <div class="contact"><i class="fa-solid fa-phone"></i><a href="#" class="contact">022 2222 8888 9999</a></div>
+          <div class="contact"><i class="fa-brands fa-whatsapp"></i></i><a href="#" class="contact">+91 7021780158</a></div>
+          <div class="contact"><i class="fa-sharp fa-regular fa-envelope"></i><a href="#"
+              class="contact">parthtrivedi447@gmail.com</a></div>
+          <div class="head"><i class="fa-solid fa-user"></i>Mr. Parth Trivedi</div>
+        </div>
+      </div>
+      <div class="col col-sm-12 col-lg-4" data-aos="fade-down">
+        <div class="card1 mb-2 d2">
+          <div class="header">Our Tech Teams </div>
+          <div class="contact"><i class="fa-solid fa-phone"></i><a href="#" class="contact">022 2222 8888 9999</a></div>
+          <div class="contact"><i class="fa-brands fa-whatsapp"></i></i><a href="#" class="contact">+91 7021780158</a></div>
+          <div class="contact"><i class="fa-sharp fa-regular fa-envelope"></i><a href="#"
+              class="contact">parthtrivedi447@gmail.com</a></div>
+          <div class="head"><i class="fa-solid fa-user"></i>Mr. Parth Trivedi</div>
+        </div>
+      </div>
+      <div class="col col-sm-12 col-lg-4">
+        <div class="card1 mb-2 d3" data-aos="fade-right">
+          <div class="header h2">Our Customer Care </div>
+          <div class="contact"><i class="fa-solid fa-phone"></i><a href="#" class="contact">022 2222 8888 9999</a></div>
+          <div class="contact"><i class="fa-brands fa-whatsapp"></i><a href="#" class="contact">+91 7021780158</a></div>
+          <div class="contact"><i class="fa-sharp fa-regular fa-envelope"></i><a href="#"
+              class="contact">parthtrivedi447@gmail.com</a></div>
+          <div class="head"><i class="fa-solid fa-user"></i>Mr. Parth Trivedi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-3 col-sm-12">
+                <div class="head mb-3" style="font-size: 50px;color: white;margin-top: 20px;">Pharma</div>
+                <div class="address mb-3" style="color: white;">
+                    81469 Schiller Curve, Suite 719, 36512-9490, Bogisichtown, New Mexico, United States
+                </div>
+                <div class="phoneno mb-3" style="color: white;">+91 2084422881/2086465729</div>
+                <div class="mail" style="color: white;">info@pharma.co.in</div>
+                <div class="fax" style="color: white;">Fax : +91 161 999 8888</div>
+            </div>
+            <div class="col col-lg-3 col-sm-12">
+                <div class="links" style="color: white;margin-top: 20px;font-size: 50px;">Link 1</div>
+                <div class="social">Twitter</div>
+                <div class="social">Facebook</div>
+                <div class="social">Youtube</div>
+                <div class="social">Instagram</div>
+            </div>
+            <div class="col col-lg-3 col-sm-12">
+                <div class="links" style="color: white;margin-top: 20px;font-size: 50px;"> Link 2</div>
+                <div class="social">F.A.Q</div>
+                <div class="social">Cookies Policy</div>
+                <div class="social">Terms and Conditions</div>
+                <div class="social">Privacy Policy</div>
+                <div class="social">Support</div>
+            </div>
+            <div class="col col-lg-3 col-sm-12">
+                <div class="links mb-3" style="color: white;margin-top: 20px;font-size: 50px;">NewsLetter</div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Your email id here" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <button type="button" class="btn" style="background-color: gold;color: white;width: 100%;">Subscribe</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="color: lightgray;text-align: center;font-size: 10px;">
+                Copyright © 2023 Pharma pharmacist.INC
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>

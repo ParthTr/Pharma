@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/all.min.css" integrity="sha512-UJqci0ZyYcQ0AOJkcIkUCxLS2L6eNcOr7ZiypuInvEhO9uqIDi349MEFrqBzoy1QlfcjfURHl+WTMjEdWcv67A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Home</title>
+    <link rel="icon" type = "image/png" href="C:\Users\Parth\OneDrive\Desktop\Parth Web Programming\Website_bootstrap\heart-beat (3).png">
+    <script src="logic.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+  *#loader
+{
+    background: #fff url(loder.gif) no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+.h1
+{
+  display: none;
+}
+.h
+{
+  text-decoration: none;
+  color: white;
+ 
+}
+.logo2
+{
+  font-size: 30px;
+}
+.card
+{
+  z-index: 1;
+}
+.btn2 
+{
+  border-color: green;
+  color: green;
+}
+.btn2:hover
+{
+  background-color: green;
+  color: white;
+}
+.footer
+{
+    background-color: black;
+    width: 100%;
+    height:55%;
+}
+.social
+{
+    color: white;
+    margin:10px;
+}
+.card-text
+{
+  height: 0px;
+  visibility: none;
+ 
+}
+.img:hover
+    {
+      position:relative;
+      top:-20px;
+
+    }
+.card-text:hover
+{
+  height: 200px;
+  visibility: visible;
+}
+.containers {
+      position: relative;
+      width: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 35px;
+  }
+  /*Apply css properties to card class*/
+   
+  .containers .card {
+      height: 220px;
+      max-width: 23%;
+      position: relative;
+      margin: 30px 10px;
+      padding: 20px 15px;
+      background: wheat;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 202px black;
+      transition: 0.3s ease-in-out;
+  }
+  /*Apply css properties to card class when it get pointed by cursor*/
+   
+  .containers .card:hover {
+      height: 520px;
+  }
+  /*Apply css properties to imgbox class*/
+   
+  .containe .card .imgbox {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      top: -60px;
+      left: 20px;
+  }
+  /*Apply css properties to img tag*/
+   
+  .containers .card .imgbox img {
+      max-width: 100%;
+      border-radius: 4px;
+  }
+  /*Apply css properties to content class*/
+   
+  .containers .card .content {
+      position: relative;
+      margin-top: -100px;
+      padding: 10px 15px;
+      text-align: center;
+      color: #111;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+  }
+  /*Apply css properties to content when card gets hovered*/
+   
+  .containers .card:hover .content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: -10px;
+      transition-delay: 0.3s;
+  }
+
+  </style>
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <script language="JavaScript">
+   
+    function function3() { 
+      swal("Success!", "You have been susccesfully Signed-In", "success");
+    }
+    function function4() { 
+      swal("Success!", "You have been susccesfully logged-In", "success");
+    }
+    function syntax()
+    {
+    var stx=/^([a-zA-Z])+$/;
+    var result=0;
+    var fname=document.getElementById('fname').value;
+    if(fname.match(stx))
+    {
+      result=1;
+    }
+    else
+    {
+      alert("First name not Matched");
+    }
+    var lname=document.getElementById('lname').value;
+    if(lname.match(stx))
+    {
+      result=1;
+    }
+    else
+    {
+      alert("Last name not Matched");
+    }
+    var country=document.getElementById('country').value; 
+    if(country!="open this select menu")
+    {
+      result=1;
+    }
+    else
+    {
+      alert("Select a country");
+    }
+    if(result==1)
+    {
+      function3();
+    }
+    
+    }
+    
+    </script>
+  <div id="loader"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary h" style="position: sticky;top:0px;z-index: 2;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="fa-solid fa-notes-medical fa-beat"></i>Pharma</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mywork.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary position-relative" style="margin-right: 50px;">
+              <i class="fa-solid fa-cart-shopping"></i> <a href="cart.html" style="text-decoration: none;color:white">Cart</a>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                12
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+            <button  type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" class=" btn btn2"><span style="font-weight: bold;margin-right: 5px;">Login/Signup</span><i class="fa-solid fa-right-to-bracket"></i></button>
+            <form class="d-flex" role="search">
+              <div style="font-size: 20px;"><i class="fa-duotone fa-right-to-bracket" ></i></div>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+     <div class="container-fluid section">
+      <div class="row">
+        <div class="col col-12">
+          <img src="medical.jpg" alt="" width="100%">
+        </div>
+      </div>
+     </div>
+       
+
+     <div class="container-fluid"  data-aos="fade-up" data-aos-offset="200"
+     data-aos-delay="70" style="text-align: center;margin-top:30px;font-weight: bold;font-size:40px;color:gold">Our Customers</div> 
+     <div class="containers section"  data-aos="fade-up" data-aos-offset="200"
+     data-aos-delay="70"
+    
+     
+     style="justify-content: space-around;width: 100vw;">
+ 
+      <div class="card" data-aos="slide-right" style="overflow:hidden">
+
+        <div class="imgbox">
+
+            <!--extracting image named gfg.jpg from images folder-->
+            <img src="person1.webp">
+           
+        </div>
+
+        <div class="content">
+
+            <!--heading of the card-->
+            <h1>Amitabh bachchan</h1>
+
+            <!--content of the card-->
+             
+
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ex quod eaque quisquam magni impedit, beatae dignissimos obcaecati repudiandae pariatur, unde quas aliquid ullam, eveniet excepturi deserunt optio similique odio.
+            </p>
+
+
+
+        </div>
+    </div>
+          
+      <div class="card" data-aos="slide-right" style="overflow:hidden">
+
+        <div class="imgbox">
+
+            <!--extracting image named gfg.jpg from images folder-->
+            <img src="person2.jfif">
+
+        </div>
+
+        <div class="content">
+
+            <!--heading of the card-->
+            <h1>Shah Rukh Khan</h1>
+
+            <!--content of the card-->
+             
+
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ex quod eaque quisquam magni impedit, beatae dignissimos obcaecati repudiandae pariatur, unde quas aliquid ullam, eveniet excepturi deserunt optio similique odio.
+            </p>
+
+
+
+        </div>
+    </div>
+    <div class="card" data-aos="slide-right" style="overflow:hidden">
+
+      <div class="imgbox">
+
+          <!--extracting image named gfg.jpg from images folder-->
+          <img src="person3.jfif">
+
+      </div>
+
+      <div class="content">
+
+          <!--heading of the card-->
+          <h1>Akhay Kumar</h1>
+
+          <!--content of the card-->
+           
+
+
+          <p>
+             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi rem facilis delectus atque quibusdam molestias voluptates illum autem iure ratione iste, commodi sit fuga incidunt asperiores numquam praesentium nihil unde.
+          </p>
+
+
+
+      </div>
+  </div>
+  <div class="card" data-aos="slide-right" style="overflow:hidden">
+
+    <div class="imgbox">
+
+        <!--extracting image named gfg.jpg from images folder-->
+        <img src="person4.jfif">
+
+    </div>
+
+    <div class="content">
+
+        <!--heading of the card-->
+        <h1>Salman Khan</h1>
+
+        <!--content of the card-->
+         
+
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eos soluta doloremque dolorem, autem fugiat? Animi, placeat blanditiis ad, dolor magni beatae tempore obcaecati maiores tempora magnam exercitationem voluptatem quaerat!
+        </p>
+
+
+
+    </div>
+</div>
+  </div>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <nav>
+            <div class="nav nav-tabs justify-content-evenly" id="nav-tab" role="tablist">
+              <button class="nav-link active" style="flex:1" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-signup" aria-selected="true">Signup</button>
+              <button class="nav-link" style="flex:1" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-login" aria-selected="false">Login</button>
+              </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent" style="margin-top: 10px;">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+              <form class="needs validation" validate method="post">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Recipient's username"
+                    aria-label="Recipient's username" aria-describedby="basic-addon2" spellcheck="false"
+                    data-ms-editor="true" fdprocessedid="098g19">
+                  <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                </div>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="fname" placeholder="First Name">
+                  <label for="fname">First Name </label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="Text" class="form-control" id="lname" placeholder="Last Name">
+                  <label for="lname">Last Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <select class="form-select" aria-label="Default select example" id="Country">
+                    <option selected>Open this select menu</option>
+                    <option value="1">India</option>
+                    <option value="2">USA</option>
+                    <option value="3">Uk</option>
+                  </select>
+                  <label for="floatingInput">Select Country </label>
+                </div>
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                  <label for="floatingTextarea">Comments</label>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Send an Email Response</label>
+                </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                  onclick="syntax()">Submit</button>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's Username"
+                  aria-label="Recipient's username" aria-describedby="basic-addon2" spellcheck="false"
+                  data-ms-editor="true" fdprocessedid="098g19">
+                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+              </div>
+              <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Recipient's Password"
+                  aria-label="Recipient's password" aria-describedby="basic-addon2" spellcheck="false"
+                  data-ms-editor="true" fdprocessedid="098g19">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+              </div>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+              onclick="function4()">Submit</button>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div class="container-fluid section" data-aos="fade-up" data-aos-offset="200"
+      data-aos-delay="140" style="overflow:hidden"
+     >
+        <div class="row " style="text-align: center;margin-bottom: 50px;background-color: lightgray;height: 40vh;">
+          <div class="col col-12 align-self-center" >
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Features  </button>
+
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i class="fa-solid fa-notes-medical fa-beat"></i>Pharma</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <p>Our Features Are:</p>
+                <ul type="none">
+                  <li>
+                    <div class="card mb-3" style="width: 18rem;">
+                      <img src="features1.jfif" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h1 class="card-title" style="font-size: 15px;">Providing information about side-effects</h1>
+                        
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="card mb-3" style="width: 18rem;">
+                      <img src="features2.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h1 class="card-title" style="font-size: 15px;">Booking of lab tests</h1>
+                        
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="card mb-3" style="width: 18rem;">
+                      <img src="feature3.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h1 class="card-title" style="font-size: 15px;">Ordering Medicine Online</h1>
+                        
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="card mb-3" style="width: 18rem;">
+                      <img src="feature4.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h1 class="card-title" style="font-size: 15px;">Providing consultancies</h1>
+                        
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="card mb-3" style="width: 18rem;">
+                      <img src="features6.jfif" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h1 class="card-title" style="font-size: 15px;">10-minute Delivery</h1>
+                        
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="container h section" data-aos="fade-up" style="overflow:hidden">
+        <div class="row" s tyle="text-align: center;margin-bottom: 50px;">
+          <div class="col col-12">
+            <img src="advice_1.jpg"  class="img-fluid" alt="" width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="container h" data-aos="fade-up" style="overflow:hidden">
+        <div class="row" style="text-align: center;margin-bottom: 50px;">
+          <div class="col col-12">
+            <img src="img3.webp" class="img-fluid" alt="">
+          </div>           
+        </div>
+      </div>
+      <div class="footer section">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-3 col-sm-12">
+                    <div class="head mb-3" style="font-size: 50px;color: white;margin-top: 20px;">Pharma</div>
+                    <div class="address mb-3" style="color: white;">
+                        81469 Schiller Curve, Suite 719, 36512-9490, Bogisichtown, New Mexico, United States
+                    </div>
+                    <div class="phoneno mb-3" style="color: white;">+91 2084422881/2086465729</div>
+                    <div class="mail" style="color: white;">info@pharma.co.in</div>
+                    <div class="fax" style="color: white;">Fax : +91 161 999 8888</div>
+                </div>
+                <div class="col col-lg-3 col-sm-12">
+                    <div class="links" style="color: white;margin-top: 20px;font-size: 50px;">Link 1</div>
+                    <div class="social">Twitter</div>
+                    <div class="social">Facebook</div>
+                    <div class="social">Youtube</div>
+                    <div class="social">Instagram</div>
+                </div>
+                <div class="col col-lg-3 col-sm-12">
+                    <div class="links" style="color: white;margin-top: 20px;font-size: 50px;"> Link 2</div>
+                    <div class="social">F.A.Q</div>
+                    <div class="social">Cookies Policy</div>
+                    <div class="social">Terms and Conditions</div>
+                    <div class="social">Privacy Policy</div>
+                    <div class="social">Support</div>
+                </div>
+                <div class="col col-lg-3 col-sm-12">
+                    <div class="links mb-3" style="color: white;margin-top: 20px;font-size: 50px;">NewsLetter</div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Your email id here" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <button type="button" class="btn" style="background-color: gold;color: white;width: 100%;">Subscribe</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="color: lightgray;text-align: center;font-size: 10px;">
+                    Copyright © 2023 Pharma pharmacist.INC
+                </div>
+            </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+       
+          var loader=document.getElementById("loader");
+          window.addEventListener("load",function(){
+            loader.style.display = "none";
+          })
+        </script>
+         <!--<iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe class="h1" width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         -->
+        
+         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+         <script>
+           AOS.init();
+         </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+                    
+
+
+
+
+
+
